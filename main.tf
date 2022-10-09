@@ -1,6 +1,7 @@
 // This block tells Terraform that we're going to provision AWS resources.
 provider "aws" {
-  region = "us-east-1"
+  alias      = "acm_provider"
+  region     = "us-east-1"
 }
 
 // Create a variable for our domain name because we'll be using it a lot.
@@ -51,7 +52,7 @@ POLICY
 resource "aws_acm_certificate" "certificate" {
   // We want a wildcard cert so we can host subdomains later.
   domain_name       = "*.${var.root_domain_name}"
-  validation_method = "EMAIL"
+  validation_method = "DNS"
 
   // We also want the cert to be valid for the root domain even though we'll be
   // redirecting to the www. domain immediately.
