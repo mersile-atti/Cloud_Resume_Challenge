@@ -1,0 +1,22 @@
+{
+  "name": "cloud_resume_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mersile-atti/Cloud_Resume_Challenge.git"
+  },
+  "author": "Oumar Mersile",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mersile-atti/Cloud_Resume_Challenge/issues"
+  },
+  "homepage": "https://github.com/mersile-atti/Cloud_Resume_Challenge#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
