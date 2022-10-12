@@ -118,3 +118,14 @@ resource "aws_cloudfront_distribution" "www_distribution" {
     ssl_support_method  = "sni-only"
   }
 }
+
+resource "aws_route53_zone" "zone" {
+  name = "${var.root_domain_name}"
+}
+
+// This Route53 record will point at our CloudFront distribution.
+resource "aws_route53_record" "www" {
+  name    = "${aws_cloudfront_distribution.www_distribution.domain_name}"
+  zone_id = "${aws_cloudfront_distribution.www_distribution.hosted_zone_id}"
+  type    = "A"
+}
